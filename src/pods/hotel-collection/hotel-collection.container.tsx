@@ -1,35 +1,35 @@
 import * as React from 'react';
 import { useHistory } from 'react-router-dom';
 import { linkRoutes } from 'core/router';
-import { deleteHotel } from './api';
-import { useHotelCollection } from './hotel-collection.hook';
-import { HotelCollectionComponent } from './hotel-collection.component';
+import { deleteCharacter } from './api';
+import { useCharacterCollection } from './hotel-collection.hook';
+import { CharacterCollectionComponent } from './hotel-collection.component';
 
-export const HotelCollectionContainer = () => {
-  const { hotelCollection, loadHotelCollection } = useHotelCollection();
+export const CharacterCollectionContainer = () => {
+  const { characterCollection, loadCharacterCollection } = useCharacterCollection();
   const history = useHistory();
 
   React.useEffect(() => {
-    loadHotelCollection();
+    loadCharacterCollection();
   }, []);
 
-  const handleCreateHotel = () => {
-    history.push(linkRoutes.createHotel);
+  const handleCreateCharacter = () => {
+    history.push(linkRoutes.createCharacter);
   };
 
   const handleEdit = (id: string) => {
-    history.push(linkRoutes.editHotel(id));
+    history.push(linkRoutes.editCharacter(id));
   };
 
   const handleDelete = async (id: string) => {
-    await deleteHotel(id);
-    loadHotelCollection();
+    await deleteCharacter(id);
+    loadCharacterCollection();
   };
 
   return (
-    <HotelCollectionComponent
-      hotelCollection={hotelCollection}
-      onCreateHotel={handleCreateHotel}
+    <CharacterCollectionComponent
+      characterCollection={characterCollection}
+      onCreateCharacter={handleCreateCharacter}
       onEdit={handleEdit}
       onDelete={handleDelete}
     />

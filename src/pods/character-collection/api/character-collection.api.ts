@@ -1,5 +1,5 @@
-import { CharacterEntityApi } from './hotel-collection.api-model';
-import { mockCharacterCollection } from './hotel-collection.mock-data';
+import { CharacterEntityApi } from './character-collection.api-model';
+import { mockCharacterCollection } from './character-collection.mock-data';
 
 let characterCollection = [...mockCharacterCollection];
 

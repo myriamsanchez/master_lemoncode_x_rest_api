@@ -13,7 +13,7 @@ export const AppLayout: React.FunctionComponent = (props) => {
   return (
     <>
       <AppBar position="static">
-        <Toolbar variant="dense">
+        <Toolbar>
           <IconButton color="inherit" aria-label="Menu">
             <AccountCircle />
           </IconButton>
